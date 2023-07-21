@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4° Evaluacion Api REST</title>
+  <!-- Agrega la referencia a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body style="background-color: #f8f9fa;">
+  <main class="d-flex justify-content-center align-items-center flex-column" style="height: 100vh;">
+    <h1 class="text-center mb-5">Evaluacion 3 y 4 Rest Framework</h1>
+    <button id="nombreBoton" class="btn-secondary btn btn-lg mb-3">Presione para ver el nombre</button>
+    <h5 class="text-center mb-3" id="nombreEstudiante" style="display: none;">Nombre: Guillermo Hurtado</h5>
+    <div class="btn-group">
+      <a href="participantes" class="btn btn-dark btn-lg me-3 rounded">Api Rest Sin Framework</a>
+      <a href="participantesFuncion" class="btn btn-dark btn-lg me-3 rounded">Api Rest Framework con funciones</a>
+      <a href="participantesClase" class="btn btn-dark btn-lg rounded">Api Rest Framework con clases</a>
+    </div>
+  </main>
+  
+  <!-- Agrega la referencia a Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script>
+    const nombreBoton = document.getElementById('nombreBoton');
+    const nombreEstudiante = document.getElementById('nombreEstudiante');
+    let mostrandoNombre = false;
+
+    nombreBoton.addEventListener('click', () => {
+      if (mostrandoNombre) {
+        nombreEstudiante.style.display = 'none';
+      } else {
+        nombreEstudiante.style.display = 'block';
+      }
+      mostrandoNombre = !mostrandoNombre;
+    });
+  </script>
+</body>
+</html>
