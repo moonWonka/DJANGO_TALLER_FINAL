@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 
+from rest_framework import generics
+
 #modelo de datos
 from .models import Participantes
 
@@ -19,6 +21,16 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.http import Http404
 
+
+#generic class based view
+class SnippetList(generics.ListCreateAPIView):
+    queryset = Participantes.objects.all()
+    serializer_class = ParticipantesSerial
+
+
+class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Participantes.objects.all()
+    serializer_class = ParticipantesSerial
 
 # Create your views here.
 
